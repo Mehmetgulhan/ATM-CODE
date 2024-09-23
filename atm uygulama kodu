@@ -1,0 +1,90 @@
+
+import time
+print(("------Hoşgeldiniz------"))
+sayı=0
+
+giris=("""
+------------------------
+     1(Kayıt Ol)
+     2(Giriş yap)
+------------------------ 
+""")
+print(giris)
+anahtar=1
+bakiye=100
+while True:
+
+    secim_kayıt=int(input("Seçin:"))
+    if secim_kayıt == 1:
+     kisim=(input("Kayıt İsminizi Girin..."))
+     ksoyad=(input("Kayıt Soyisminizi girin..."))
+     print("Kayıt Oluşturuluyor...")
+     time.sleep(2)
+     print("Kayıt olundu")
+
+    elif secim_kayıt ==2:
+        print("Giriş yapın")
+        gisim=(input("Giriş İsminizi Yazın"))
+        gsoyad=(input("Giriş Soyadınızı Girin"))
+        if kisim != gisim and ksoyad != gsoyad:
+            print("Giriş Başarısız")
+        if kisim != gisim and ksoyad == gsoyad:
+            print("Kullanıcı Adı Yanlış Tekrar Deneyin:")
+        if kisim == gisim and ksoyad != gsoyad:
+            print("Şifre Yanlış Tekrar Deneyin:")
+        if kisim == gisim and ksoyad == gsoyad:
+            print("Giriş başarılı")
+            time.sleep(1)
+            print("""
+            1)Ziraat Bankası
+            2)Vakıf Bank
+            3)Şeker Bank
+            4)Akbank
+            5)Garanti Bankası
+            6)Halk Bank
+            7)Yapı Kredi
+            """)
+            secim2=(input("Hangi Bankadan işlem Yapmak İstiyorsunuz"))
+            print("giriş yapılıyor lütfen bekleyiniz")
+            for i in range(0,101,9):
+                time.sleep(0.6)
+                print("%",i)
+            print("""
+ATM uygulamasına hoş geldiniz.!
+(1) Bakiye Sorma
+(2) Para Çekme
+(3) Para Yatırma
+(4) Transfer
+(q) Çıkış
+
+""")
+            break
+    else:
+        print("Yanlış Tuşladınız...")
+while True:
+
+    secim3=int(input("Hangi İşlemi Yapmak İstiyorsunuz:"))
+    if secim3 ==1:
+        print(bakiye)
+    elif secim3 ==2:
+        pcekme=int(input("Miktar Giriniz:"))
+        pcekme2=bakiye - pcekme
+        print(("Paranız Çekilmiştir"))
+    elif secim3 ==3:
+        pyatırma2= int(input("Miktar Giriniz:"))
+        pyatırma=bakiye + pyatırma2
+        print(("Paranız Yatırılmıştır"))
+    elif secim3 == 4:
+        iban=(input("Transfer Edilcek Hesabın Numarasını Giriniz"))
+        pgönderme=(int(input("Miktarı Giriniz:")))
+        pbakiye=(bakiye-pgönderme)
+        print("Para Transferi Gönderilmiştir")
+    elif secim3 == "q":
+        print("iyi günler dileriz")
+        break
+
+
+
+
+
+
